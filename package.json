@@ -3,8 +3,8 @@
    "main": "expo-router/entry",
    "scripts": {
       "start": "expo start --clear",
-      "android": "expo start --android",
-      "ios": "expo start --ios",
+      "android": "npx expo run:android",
+      "ios": "npx expo run:ios",
       "format": "biome format --write --config-path ./biome.json ./"
    },
    "jest": {
@@ -13,9 +13,11 @@
    "dependencies": {
       "@react-navigation/bottom-tabs": "^7.2.0",
       "@react-navigation/native": "^7.0.14",
+      "clsx": "^2.1.1",
       "expo": "~52.0.46",
       "expo-blur": "~14.0.3",
       "expo-constants": "~17.0.8",
+      "expo-dev-client": "~5.0.20",
       "expo-font": "~13.0.4",
       "expo-haptics": "~14.0.1",
       "expo-linking": "~7.0.5",
@@ -27,6 +29,7 @@
       "nativewind": "^4.1.23",
       "react": "18.3.1",
       "react-native": "0.76.9",
+      "react-native-edge-to-edge": "^1.6.0",
       "react-native-gesture-handler": "~2.20.2",
       "react-native-reanimated": "3.16.2",
       "react-native-safe-area-context": "4.12.0",
