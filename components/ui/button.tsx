@@ -13,10 +13,6 @@ type Props = {
    onPress?: () => void;
 };
 
-const colorPallet = {
-   primary: '[--color-primary]',
-};
-
 export const Button = ({
    color = 'primary',
    variant = 'filled',
@@ -32,17 +28,17 @@ export const Button = ({
       (button: string[] = [''], text: string[] = ['']) => {
          if (color === 'primary') {
             if (variant === 'filled') {
-               button.push(`bg-${colorPallet[color]}`);
+               button.push('bg-[--color-primary]');
 
                text.push('text-white');
             }
 
             if (variant === 'outline') {
-               button.push(`border border-${colorPallet[color]}`);
+               button.push('border border-[--color-primary]');
             }
 
             if (variant === 'transparent' || variant === 'outline') {
-               text.push(`text-${colorPallet[color]}`);
+               text.push('text-[--color-primary]');
             }
          }
 
