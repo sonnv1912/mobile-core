@@ -1,21 +1,23 @@
 import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type State = {
-   colorMode: 'light' | 'dark';
+   isLoggedIn: boolean;
+   user: null;
 };
 
 type Action = {
-   setAppState: (payload: Partial<State>) => void;
+   setAuthState: (payload: Partial<State>) => void;
 };
 
-export const useAppStore = create<State & Action>()(
+export const useAuthStore = create<State & Action>()(
    persist(
       (set) => ({
-         colorMode: 'light',
+         isLoggedIn: false,
+         user: null,
 
-         setAppState(payload) {
+         setAuthState(payload) {
             set((prev) => ({
                ...prev,
                ...payload,
@@ -23,7 +25,7 @@ export const useAppStore = create<State & Action>()(
          },
       }),
       {
-         name: 'auth',
+         name: 'app',
          storage: createJSONStorage(() => AsyncStorage),
       },
    ),
