@@ -3,7 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type State = {
-   isLoggedIn: boolean;
+   loggedIn: boolean;
    user: null;
 };
 
@@ -14,7 +14,7 @@ type Action = {
 export const useAuthStore = create<State & Action>()(
    persist(
       (set) => ({
-         isLoggedIn: false,
+         loggedIn: false,
          user: null,
 
          setAuthState(payload) {

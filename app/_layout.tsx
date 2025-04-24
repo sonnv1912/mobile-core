@@ -1,24 +1,27 @@
-import '../assets/styles/main.css';
-import '../configs/i18n/index';
-
-import { ToastManager } from '@components/ui/toast-manager';
+import { Toast } from '@components/ui/toast';
 import { queryClient } from '@configs/query-client';
 import { DefaultLayout } from '@layouts/default/default-layout';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Stack } from 'expo-router';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 
-export default function RootLayout() {
+import '../assets/styles/main.css';
+import '../configs/i18n/index';
+
+export default () => {
    return (
       <DefaultLayout>
          <QueryClientProvider client={queryClient}>
-            <Stack
-               screenOptions={{
-                  headerShown: false,
-               }}
-            />
+            <KeyboardProvider>
+               <Stack
+                  screenOptions={{
+                     headerShown: false,
+                  }}
+               />
 
-            <ToastManager />
+               <Toast />
+            </KeyboardProvider>
          </QueryClientProvider>
       </DefaultLayout>
    );
-}
+};

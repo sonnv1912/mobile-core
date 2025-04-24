@@ -6,7 +6,7 @@ import type {
    ToastConfigParams,
 } from 'toastify-react-native/utils/interfaces';
 
-const Toast = ({ text1, type, text2 }: ToastConfigParams) => {
+const ToastByType = ({ text1, type }: ToastConfigParams) => {
    const color = {
       success: 'bg-green-500',
       error: 'bg-red-500',
@@ -16,27 +16,23 @@ const Toast = ({ text1, type, text2 }: ToastConfigParams) => {
    };
 
    return (
-      <View className='px-4 w-full'>
-         <View
-            className={`${color[type || 'default']} w-full p-3 rounded-lg gap-2`}
-         >
-            <Text className='text-white font-semibold text-lg'>{text1}</Text>
-
-            {text2 && <Text className='text-white font-semibold'>{text2}</Text>}
-         </View>
+      <View
+         className={`${color[type || 'default']} px-3 py-2 rounded-lg gap-2`}
+      >
+         <Text className='text-white font-semibold'>{text1}</Text>
       </View>
    );
 };
 
-export const ToastManager = () => {
+export const Toast = () => {
    const insets = useSafeAreaInsets();
 
    const config: ToastConfig = {
-      success: Toast,
-      error: Toast,
-      warn: Toast,
-      info: Toast,
-      default: Toast,
+      success: ToastByType,
+      error: ToastByType,
+      warn: ToastByType,
+      info: ToastByType,
+      default: ToastByType,
    };
 
    return (

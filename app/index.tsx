@@ -1,13 +1,13 @@
-import { Screen } from '@components/ui/screen';
-import { useTranslation } from 'react-i18next';
-import { Text } from 'react-native';
+import { routes } from '@configs/routes';
+import { useAuthStore } from '@hooks/stores/use-auth-store';
+import { Redirect } from 'expo-router';
 
-export default function Index() {
-   const { t } = useTranslation();
+export default () => {
+   const loggedIn = useAuthStore((state) => state.loggedIn);
 
-   return (
-      <Screen>
-         <Text>{t('common:hi')}</Text>
-      </Screen>
-   );
-}
+   if (loggedIn) {
+      return <Redirect href={routes.home.path} />;
+   }
+
+   return <Redirect href={routes.login.path} />;
+};

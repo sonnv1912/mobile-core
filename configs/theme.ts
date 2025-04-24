@@ -1,7 +1,7 @@
 import { vars } from 'nativewind';
 
 export const colorPallet = {
-   shark: {
+   primary: {
       '50': '#f5f5f6',
       '100': '#e6e6e7',
       '200': '#cfd0d2',
@@ -19,10 +19,10 @@ export const colorPallet = {
 export const theme = {
    default: {
       light: vars({
-         '--color-primary': colorPallet.shark[950],
+         '--color-primary': colorPallet.primary[200],
       }),
       dark: vars({
-         '--color-primary': colorPallet.shark[950],
+         '--color-primary': colorPallet.primary[950],
       }),
    },
 };
