@@ -16,7 +16,7 @@ export const Screen = ({
    const insets = useSafeAreaInsets();
 
    return (
-      <View className={clsx('flex-1', className)}>
+      <>
          <View
             className={statusBarClassName}
             style={{
@@ -24,13 +24,13 @@ export const Screen = ({
             }}
          />
 
-         <View className='flex-1'>{children}</View>
+         <View className={clsx('flex-1', className)}>{children}</View>
 
          <View
             style={{
                height: insets.bottom,
             }}
          />
-      </View>
+      </>
    );
 };
