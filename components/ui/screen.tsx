@@ -21,14 +21,16 @@ export const Screen = ({
             className={statusBarClassName}
             style={{
                height: insets.top,
+               backgroundColor: __DEV__ ? 'red' : 'transparent',
             }}
          />
 
-         <View className={clsx('flex-1', className)}>{children}</View>
+         <View className={clsx('flex-1 p-4', className)}>{children}</View>
 
          <View
             style={{
                height: insets.bottom,
+               backgroundColor: __DEV__ ? 'red' : 'transparent',
             }}
          />
       </>
