@@ -3,8 +3,8 @@ import { Text } from 'react-native';
 
 export const DrawerContent = () => {
    return (
-      <Screen>
-         <Text>hi</Text>
+      <Screen className='justify-center items-center'>
+         <Text>Try edit ./components/layout/drawer-content.tsx</Text>
       </Screen>
    );
 };
