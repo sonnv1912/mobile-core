@@ -21,7 +21,6 @@ export const Screen = ({
             className={statusBarClassName}
             style={{
                height: insets.top,
-               backgroundColor: __DEV__ ? 'red' : 'transparent',
             }}
          />
 
@@ -30,7 +29,6 @@ export const Screen = ({
          <View
             style={{
                height: insets.bottom,
-               backgroundColor: __DEV__ ? 'red' : 'transparent',
             }}
          />
       </>
