@@ -1,0 +1,21 @@
+{
+   "name": "@packages/configs",
+   "version": "1.0.0",
+   "exports": {
+      "./package.json": "./package.json",
+      ".": {
+         "types": "./dist/index.d.ts",
+         "import": "./src/index.ts",
+         "require": "./dist/index.js"
+      }
+   },
+   "scripts": {
+      "dev_package": "tsup --watch"
+   },
+   "dependencies": {
+      "tsup": "8.4.0"
+   },
+   "peerDependencies": {
+      "@tanstack/react-query": "*"
+   }
+}

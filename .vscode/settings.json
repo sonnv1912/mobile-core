@@ -1,5 +1,5 @@
 {
-   "cSpell.words": ["nativewind", "turbopack"],
+   "cSpell.words": ["nativewind", "nodenext", "turbopack"],
    "tailwindCSS.classAttributes": ["class", "className", "headerClassName"],
    "editor.defaultFormatter": "biomejs.biome",
    "[json]": {

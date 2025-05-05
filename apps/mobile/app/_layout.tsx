@@ -3,7 +3,7 @@ import '../configs/i18n/index';
 import '../gesture-handler';
 
 import { Toast } from '@components/ui/toast';
-import { queryClient } from '@configs/query-client';
+import { queryClient } from '@packages/configs';
 import { DefaultLayout } from '@layouts/default/default-layout';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Stack } from 'expo-router';

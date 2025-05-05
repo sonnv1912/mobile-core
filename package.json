@@ -3,8 +3,8 @@
    "private": true,
    "scripts": {
       "build": "turbo run build",
-      "ios": "turbo run ios --filter=mobile",
-      "android": "turbo run android --filter=mobile",
+      "ios": "turbo watch ios --filter=mobile",
+      "android": "turbo watch android --filter=mobile",
       "format": "biome format --write --config-path ./biome.json ./"
    },
    "devDependencies": {
