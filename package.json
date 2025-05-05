@@ -5,6 +5,7 @@
       "build": "turbo run build",
       "ios": "turbo watch ios --filter=mobile",
       "android": "turbo watch android --filter=mobile",
+      "web": "turbo watch web --filter=web",
       "format": "biome format --write --config-path ./biome.json ./"
    },
    "devDependencies": {
