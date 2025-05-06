@@ -1,6 +1,7 @@
+import { IS_WEB } from '@packages/configs';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type State = {
    colorMode: 'light' | 'dark';
@@ -24,7 +25,9 @@ export const useAppStore = create<State & Action>()(
       }),
       {
          name: 'auth',
-         storage: createJSONStorage(() => AsyncStorage),
+         storage: createJSONStorage(() => {
+            return IS_WEB ? localStorage : AsyncStorage;
+         }),
       },
    ),
 );

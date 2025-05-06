@@ -1,6 +1,7 @@
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { IS_WEB } from '@packages/configs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 type State = {
    loggedIn: boolean;
@@ -26,7 +27,9 @@ export const useAuthStore = create<State & Action>()(
       }),
       {
          name: 'app',
-         storage: createJSONStorage(() => AsyncStorage),
+         storage: createJSONStorage(() => {
+            return IS_WEB ? localStorage : AsyncStorage;
+         }),
       },
    ),
 );

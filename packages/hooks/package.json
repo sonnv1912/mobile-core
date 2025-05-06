@@ -1,0 +1,23 @@
+{
+   "name": "@packages/hooks",
+   "version": "1.0.0",
+   "exports": {
+      "./package.json": "./package.json",
+      "./stores": {
+         "types": "./dist/stores/index.d.ts",
+         "import": "./src/stores/index.ts",
+         "require": "./dist/stores/index.js"
+      }
+   },
+   "scripts": {
+      "dev_package": "tsup --watch"
+   },
+   "dependencies": {
+      "tsup": "8.4.0",
+      "@packages/configs": "*"
+   },
+   "peerDependencies": {
+      "zustand": "*",
+      "@react-native-async-storage/async-storage": "*"
+   }
+}

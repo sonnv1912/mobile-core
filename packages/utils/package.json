@@ -1,5 +1,5 @@
 {
-   "name": "@packages/configs",
+   "name": "@packages/utils",
    "version": "1.0.0",
    "exports": {
       "./package.json": "./package.json",
@@ -13,11 +13,12 @@
       "dev_package": "tsup --watch"
    },
    "dependencies": {
-      "tsup": "8.4.0"
+      "tsup": "8.4.0",
+      "@packages/configs": "*"
    },
    "peerDependencies": {
-      "@tanstack/react-query": "*",
-      "i18next": "*",
-      "react-i18next": "*"
+      "zustand": "*",
+      "@react-native-async-storage/async-storage": "*",
+      "query-string": "*"
    }
 }

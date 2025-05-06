@@ -1,5 +1,5 @@
 import { theme } from '@configs/theme';
-import { useAppStore } from '@hooks/stores/use-app-store';
+import { useAppStore } from '@packages/hooks/stores';
 import type { PropsWithChildren } from 'react';
 import { View } from 'react-native';
 import { SystemBars } from 'react-native-edge-to-edge';

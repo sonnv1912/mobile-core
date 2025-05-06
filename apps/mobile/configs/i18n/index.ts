@@ -1,7 +1,5 @@
 import enCommon from './locales/en/common.json';
-
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import { initI18n } from '@packages/configs';
 
 const resources = {
    en: {
@@ -9,13 +7,6 @@ const resources = {
    },
 };
 
-i18n.use(initReactI18next).init({
-   resources,
-   lng: 'en',
-
-   interpolation: {
-      escapeValue: false,
-   },
-});
+const i18n = initI18n(resources);
 
 export default i18n;
