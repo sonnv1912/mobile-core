@@ -1,16 +1,7 @@
 import queryString from 'query-string';
+import type { RequestProps } from '@packages/types';
 
-type Props = {
-   endpoint: string;
-   options: {
-      method: 'GET' | 'POST' | 'PUT' | 'DELETE';
-      body?: object;
-      params?: object;
-      token?: string;
-   };
-};
-
-export const request = async <T>({ endpoint, options }: Props) => {
+export const request = async <T>({ endpoint, options }: RequestProps) => {
    const params = options.params
       ? `?${queryString.stringify(options.params)}`
       : '';

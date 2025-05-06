@@ -6,17 +6,19 @@
       "build": "next build"
    },
    "dependencies": {
+      "@packages/configs": "*",
+      "@packages/hooks": "*",
+      "@packages/utils": "*",
       "react": "^19.0.0",
       "react-dom": "^19.0.0",
       "next": "15.3.1",
       "zustand": "^5.0.4",
-      "@packages/configs": "*",
-      "@packages/hooks": "*",
       "i18next": "^25.0.2",
       "react-i18next": "^15.5.1",
       "query-string": "9.1.2"
    },
    "devDependencies": {
+      "@packages/types": "*",
       "typescript": "^5",
       "@types/node": "^20",
       "@types/react": "^19",

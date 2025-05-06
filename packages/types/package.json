@@ -1,23 +1,19 @@
 {
-   "name": "@packages/utils",
+   "name": "@packages/types",
    "version": "1.0.0",
    "exports": {
       "./package.json": "./package.json",
       ".": {
          "types": "./dist/index.d.ts",
-         "import": "./src/index.ts",
-         "require": "./dist/index.js"
+         "import": "./src/index.ts"
       }
    },
    "scripts": {
-      "dev_package": "tsup --watch"
+      "dev_package": "tsup --watch --dts-only"
    },
    "dependencies": {
-      "@packages/configs": "*",
-      "tsup": "8.4.0"
-   },
-   "devDependencies": {
-      "@packages/types": "*"
+      "tsup": "8.4.0",
+      "@packages/configs": "*"
    },
    "peerDependencies": {
       "zustand": "*",
