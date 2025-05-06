@@ -11,6 +11,11 @@ export const Sidebar = () => {
          label: 'Home',
          icon: 'MingcuteHome2Fill',
       },
+      {
+         code: 'settings',
+         label: 'Settings',
+         icon: 'CiSettingsFilled',
+      },
    ];
 
    return (
