@@ -1,5 +1,12 @@
 {
-   "cSpell.words": ["directus", "nativewind", "nodenext", "turbopack"],
+   "cSpell.words": [
+      "directus",
+      "Mingcute",
+      "nativewind",
+      "nodenext",
+      "Sortify",
+      "turbopack"
+   ],
    "tailwindCSS.classAttributes": ["class", "className", "headerClassName"],
    "editor.defaultFormatter": "biomejs.biome",
    "[json]": {
