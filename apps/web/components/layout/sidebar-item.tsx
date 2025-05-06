@@ -10,7 +10,7 @@ export const SidebarItem = ({ data }: Props) => {
    return (
       <div
          className={clsx(
-            'flex items-center gap-1 border-l-4 border-transparent transition-all',
+            'flex items-center gap-2 border-l-4 border-transparent transition-all',
             'cursor-pointer pl-2 py-1',
             'hover:border-primary',
          )}
