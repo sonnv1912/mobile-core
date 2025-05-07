@@ -1,4 +1,5 @@
 import { Button } from '@components/form/button';
+import { Input } from '@components/form/input';
 import { Breadcrumb } from '@components/ui/breadcrumb';
 
 export const Header = () => {
@@ -17,8 +18,32 @@ export const Header = () => {
             />
          </div>
 
-         <div className='mt-5'>
-            <p className='text-2xl text-t-strong font-bold'>Home</p>
+         <div className='mt-5 flex items-center gap-2'>
+            <p className='text-2xl text-t-strong font-bold flex-1'>Home</p>
+
+            <Input
+               leftIcon={{
+                  name: 'SiSearchLine',
+               }}
+               placeholder='Search files and folders...'
+               className='min-w-72'
+            />
+
+            <Button
+               variant='outline'
+               scheme='gray'
+               leftIcon={{
+                  name: 'LucideHardDriveUpload',
+               }}
+            />
+
+            <Button
+               variant='outline'
+               scheme='gray'
+               leftIcon={{
+                  name: 'CiSettingsFilled',
+               }}
+            />
          </div>
       </div>
    );

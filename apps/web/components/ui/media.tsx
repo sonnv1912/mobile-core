@@ -1,16 +1,23 @@
-import { svg, type SvgType } from '@assets/svg/_index';
-import type { IconProps } from '@packages/types';
-
-type Props = IconProps & {
-   name: SvgType;
-};
+import { type SvgType, svg } from '@assets/svg/_index';
+import type { MediaProps } from '@packages/types';
+import clsx from 'clsx';
 
 export const Media = ({
    name,
    color = 'var(--text-muted)',
    size = 24,
-}: Props) => {
+   className,
+}: MediaProps<SvgType>) => {
    const Body = svg[name];
 
-   return <Body color={color} size={size} />;
+   return (
+      <div
+         className={clsx(
+            'flex items-center justify-center w-fit h-fit',
+            className,
+         )}
+      >
+         <Body color={color} size={size} name={name} />
+      </div>
+   );
 };

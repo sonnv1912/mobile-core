@@ -1,31 +1,17 @@
-import type { SvgType } from '@assets/svg/_index';
 import { Media } from '@components/ui/media';
-import type { IconProps } from '@packages/types';
 import clsx from 'clsx';
-import {
-   useCallback,
-   useMemo,
-   type CSSProperties,
-   type PropsWithChildren,
-} from 'react';
-
-type Icon = IconProps & {
-   name?: SvgType;
-   className?: string;
-};
-
-type DynamicProps = {
-   className: string;
-   style: CSSProperties;
-};
+import { type PropsWithChildren, useCallback, useMemo } from 'react';
+import type { DynamicProps } from '#types/button';
+import type { SvgType } from '@assets/svg/_index';
+import type { MediaProps } from '@packages/types';
 
 type Props = {
    scheme?: 'primary' | 'gray';
    variant?: 'fill' | 'outline' | 'transparent';
    size?: 'sm' | 'md';
    className?: string;
-   leftIcon?: Icon;
-   rightIcon?: Icon;
+   leftIcon?: MediaProps<SvgType>;
+   rightIcon?: MediaProps<SvgType>;
    content?: string;
    disable?: boolean;
    fullWidth?: boolean;
@@ -194,15 +180,12 @@ export const Button = ({
          ) : (
             <>
                {leftIcon?.name && (
-                  <div className={leftIcon.className}>
-                     <Media
-                        name={leftIcon.name}
-                        size={leftIcon.size || iconSize}
-                        color={
-                           leftIcon.color || dynamicProps.content.style.color
-                        }
-                     />
-                  </div>
+                  <Media
+                     className={leftIcon.className}
+                     name={leftIcon.name}
+                     size={leftIcon.size || iconSize}
+                     color={leftIcon.color || dynamicProps.content.style.color}
+                  />
                )}
 
                {content && (

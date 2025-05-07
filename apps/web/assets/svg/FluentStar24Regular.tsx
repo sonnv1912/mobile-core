@@ -1,6 +1,6 @@
-import type { IconProps } from '@packages/types';
+import type { MediaProps } from '@packages/types';
 
-export function FluentStar24Regular(props: IconProps) {
+export function FluentStar24Regular(props: MediaProps) {
    return (
       <svg
          xmlns='http://www.w3.org/2000/svg'

@@ -1,6 +1,6 @@
-import type { IconProps } from '@packages/types';
+import type { MediaProps } from '@packages/types';
 
-export function FluentColorDocumentFolder16(props: IconProps) {
+export function FluentColorDocumentFolder16(props: MediaProps) {
    return (
       <svg
          xmlns='http://www.w3.org/2000/svg'
