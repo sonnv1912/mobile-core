@@ -9,7 +9,8 @@
 .light {
   --background: #ffffff;
   --primary: #4f46e5;
-  --danger: #f43f5e;
+  --gray: #f43f5e;
+  --gray: #cbd5e1;
 
   --border-divider: #e2e8f0;
 
@@ -26,6 +27,7 @@
   --color-background: var(--background);
   --color-primary: var(--primary);
   --color-danger: var(--danger);
+  --color-gray: var(--gray);
 
   --color-divider: var(--border-divider);
 
@@ -42,5 +44,5 @@
 
 html {
   font-family: var(--font-sans);
-  color: var(--text-normal);
+  color: var(--color-t-normal);
 }

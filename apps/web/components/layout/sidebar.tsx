@@ -22,7 +22,7 @@ export const Sidebar = () => {
       <div
          className={clsx(
             'flex flex-col p-4 w-80 border-r border-divider h-screen',
-            'bg-background',
+            'bg-background overflow-auto',
          )}
       >
          <div className='mb-6'>

@@ -1,0 +1,220 @@
+import type { SvgType } from '@assets/svg/_index';
+import { Media } from '@components/ui/media';
+import type { IconProps } from '@packages/types';
+import clsx from 'clsx';
+import {
+   useCallback,
+   useMemo,
+   type CSSProperties,
+   type PropsWithChildren,
+} from 'react';
+
+type Icon = IconProps & {
+   name?: SvgType;
+   className?: string;
+};
+
+type DynamicProps = {
+   className: string;
+   style: CSSProperties;
+};
+
+type Props = {
+   scheme?: 'primary' | 'gray';
+   variant?: 'fill' | 'outline' | 'transparent';
+   size?: 'sm' | 'md';
+   className?: string;
+   leftIcon?: Icon;
+   rightIcon?: Icon;
+   content?: string;
+   disable?: boolean;
+   fullWidth?: boolean;
+};
+
+export const Button = ({
+   children,
+   className,
+   content,
+   scheme = 'primary',
+   size = 'md',
+   variant = 'fill',
+   leftIcon,
+   rightIcon,
+   disable,
+   fullWidth,
+}: PropsWithChildren<Props>) => {
+   const buttonHeight = useMemo(() => {
+      if (size === 'sm') {
+         return 32;
+      }
+
+      if (size === 'md') {
+         return 40;
+      }
+
+      return 48;
+   }, [size]);
+
+   const contentSize = useMemo(() => {
+      if (size === 'sm') {
+         return 12;
+      }
+
+      if (size === 'md') {
+         return 14;
+      }
+
+      return 16;
+   }, [size]);
+
+   const iconSize = useMemo(() => {
+      if (size === 'sm') {
+         return 16;
+      }
+
+      if (size === 'md') {
+         return 20;
+      }
+
+      return 28;
+   }, [size]);
+
+   const handleScheme = useCallback(
+      ({
+         content,
+         button,
+      }: {
+         button: DynamicProps;
+         content: DynamicProps;
+      }) => {
+         const primary = 'var(--primary)';
+         const gray = 'var(--gray)';
+         const white = 'white';
+         const normal = 'var(--normal)';
+
+         if (scheme === 'primary') {
+            if (variant === 'fill') {
+               button.style.backgroundColor = primary;
+
+               content.style.color = white;
+            }
+
+            if (variant === 'outline') {
+               button.style.border = `1px solid ${primary}`;
+            }
+
+            if (variant === 'transparent' || variant === 'outline') {
+               content.style.color = primary;
+            }
+         }
+
+         if (scheme === 'gray') {
+            if (variant === 'fill') {
+               button.style.backgroundColor = gray;
+
+               content.style.color = normal;
+            }
+
+            if (variant === 'outline') {
+               button.style.border = `1px solid ${gray}`;
+            }
+
+            if (variant === 'transparent' || variant === 'outline') {
+               content.style.color = normal;
+            }
+         }
+
+         if (variant === 'transparent') {
+            button.style.padding = 0;
+            button.style.backgroundColor = 'transparent';
+            button.style.height = 'fit-content';
+            button.style.borderRadius = 0;
+         }
+
+         return { button, content };
+      },
+      [scheme, variant],
+   );
+
+   const dynamicProps = useMemo(() => {
+      const button: DynamicProps = {
+         className: '',
+         style: {
+            height: buttonHeight,
+            width: content
+               ? fullWidth
+                  ? 'initial'
+                  : 'fit-content'
+               : buttonHeight,
+         },
+      };
+
+      const contentProps: DynamicProps = {
+         className: '',
+         style: {
+            textAlign: leftIcon || rightIcon ? 'left' : 'center',
+            fontSize: contentSize,
+         },
+      };
+
+      const propsByScheme = handleScheme({
+         button,
+         content: contentProps,
+      });
+
+      return propsByScheme;
+   }, [
+      buttonHeight,
+      leftIcon,
+      rightIcon,
+      handleScheme,
+      contentSize,
+      content,
+      fullWidth,
+   ]);
+
+   return (
+      <div
+         className={clsx(
+            'rounded-full flex items-center gap-1.5 font-semibold',
+            'border border-transparent hover:grayscale-25',
+            className,
+            dynamicProps.button.className,
+            {
+               'px-3': content,
+               'justify-center': !content,
+               'cursor-not-allowed': disable,
+               'cursor-pointer': !disable,
+            },
+         )}
+         style={dynamicProps.button.style}
+      >
+         {children ? (
+            children
+         ) : (
+            <>
+               {leftIcon?.name && (
+                  <div className={leftIcon.className}>
+                     <Media
+                        name={leftIcon.name}
+                        size={leftIcon.size || iconSize}
+                        color={
+                           leftIcon.color || dynamicProps.content.style.color
+                        }
+                     />
+                  </div>
+               )}
+
+               {content && (
+                  <p
+                     className={clsx('flex-1', dynamicProps.content.className)}
+                     style={dynamicProps.content.style}
+                  >
+                     {content}
+                  </p>
+               )}
+            </>
+         )}
+      </div>
+   );
+};

@@ -28,7 +28,8 @@
          "all": true,
          "style": {
             "noDefaultExport": "off",
-            "useNamingConvention": "off"
+            "useNamingConvention": "off",
+            "useExplicitLengthCheck": "off"
          },
          "correctness": {
             "useImportExtensions": "off",
