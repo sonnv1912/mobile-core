@@ -8,6 +8,7 @@ import type { MediaProps } from '@packages/types';
 type Props = {
    scheme?: 'primary' | 'gray';
    variant?: 'fill' | 'outline' | 'transparent';
+   rounded?: boolean;
    size?: 'sm' | 'md';
    className?: string;
    leftIcon?: MediaProps<SvgType>;
@@ -15,6 +16,8 @@ type Props = {
    content?: string;
    disable?: boolean;
    fullWidth?: boolean;
+
+   onClick?: () => void;
 };
 
 export const Button = ({
@@ -24,10 +27,13 @@ export const Button = ({
    scheme = 'primary',
    size = 'md',
    variant = 'fill',
+   rounded = true,
    leftIcon,
    rightIcon,
    disable,
    fullWidth,
+
+   onClick,
 }: PropsWithChildren<Props>) => {
    const buttonHeight = useMemo(() => {
       if (size === 'sm') {
@@ -114,6 +120,7 @@ export const Button = ({
             button.style.padding = 0;
             button.style.backgroundColor = 'transparent';
             button.style.height = 'fit-content';
+            button.style.width = 'fit-content';
             button.style.borderRadius = 0;
          }
 
@@ -132,6 +139,7 @@ export const Button = ({
                   ? 'initial'
                   : 'fit-content'
                : buttonHeight,
+            borderRadius: rounded ? 9999 : 8,
          },
       };
 
@@ -157,12 +165,13 @@ export const Button = ({
       contentSize,
       content,
       fullWidth,
+      rounded,
    ]);
 
    return (
       <div
          className={clsx(
-            'rounded-full flex items-center gap-1.5 font-semibold',
+            'flex items-center gap-1.5 font-semibold',
             'border border-transparent hover:grayscale-25',
             className,
             dynamicProps.button.className,
@@ -174,6 +183,7 @@ export const Button = ({
             },
          )}
          style={dynamicProps.button.style}
+         onClick={onClick}
       >
          {children ? (
             children

@@ -1,11 +1,17 @@
 import { Button } from '@components/form/button';
 import { Input } from '@components/form/input';
 import { Breadcrumb } from '@components/ui/breadcrumb';
+import clsx from 'clsx';
 
 export const Header = () => {
    return (
       <div className='bg-box-primary p-5 border-b border-divider'>
-         <div className='flex items-center justify-between'>
+         <div
+            className={clsx(
+               'hidden items-center justify-between mb-5',
+               'md:flex',
+            )}
+         >
             <Breadcrumb />
 
             <Button
@@ -18,32 +24,33 @@ export const Header = () => {
             />
          </div>
 
-         <div className='mt-5 flex items-center gap-2'>
-            <p className='text-2xl text-t-strong font-bold flex-1'>Home</p>
+         <div className='flex items-center justify-between gap-2 flex-wrap'>
+            <p className='text-2xl text-t-strong font-bold'>Home</p>
 
-            <Input
-               leftIcon={{
-                  name: 'SiSearchLine',
-               }}
-               placeholder='Search files and folders...'
-               className='min-w-72'
-            />
+            <div className='flex items-center gap-2'>
+               <Input
+                  leftIcon={{
+                     name: 'SiSearchLine',
+                  }}
+                  placeholder='Search  ...'
+               />
 
-            <Button
-               variant='outline'
-               scheme='gray'
-               leftIcon={{
-                  name: 'LucideHardDriveUpload',
-               }}
-            />
+               <Button
+                  variant='outline'
+                  scheme='gray'
+                  leftIcon={{
+                     name: 'LucideHardDriveUpload',
+                  }}
+               />
 
-            <Button
-               variant='outline'
-               scheme='gray'
-               leftIcon={{
-                  name: 'CiSettingsFilled',
-               }}
-            />
+               <Button
+                  variant='outline'
+                  scheme='gray'
+                  leftIcon={{
+                     name: 'CiSettingsFilled',
+                  }}
+               />
+            </div>
          </div>
       </div>
    );

@@ -7,11 +7,11 @@ export const Breadcrumb = () => {
          <Button
             size='sm'
             leftIcon={{ name: 'MingcuteHome2Fill' }}
-            // variant='outline'
+            variant='transparent'
             scheme='gray'
          />
 
-         <Media name='IcRoundChevronRight' size={28} />
+         <Media name='IcRoundChevronRight' />
 
          <Button variant='transparent' scheme='gray' content='Home' />
       </div>
