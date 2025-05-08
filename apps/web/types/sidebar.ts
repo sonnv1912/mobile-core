@@ -1,4 +1,4 @@
 import type { SvgType } from '@assets/svg/_index';
-import type { Option } from '@packages/types';
+import type { MediaProps, Option } from '@packages/types';
 
-export type SidebarItemType = Option<string, SvgType>;
+export type SidebarItemType = Option<string, MediaProps<SvgType>>;

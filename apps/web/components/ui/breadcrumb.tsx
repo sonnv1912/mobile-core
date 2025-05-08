@@ -10,7 +10,7 @@ export const Breadcrumb = () => {
    const pathname = usePathname();
 
    const items = useMemo(() => {
-      const data = (pathname?.split('/') || []).filter((t) => !!t);
+      const data = pathname === '/' ? [''] : pathname?.split('/') || [];
 
       const result: Option<string, MediaProps<SvgType>, string>[] = [
          {
@@ -31,13 +31,13 @@ export const Breadcrumb = () => {
             },
          });
 
-         for (let index = 0; index < data.length; index++) {
+         for (let index = 1; index < data.length; index++) {
             const path = data[index];
 
             result.push({
                code: pathname?.slice(index) || path,
                label: path,
-               href: pathname?.slice(0, pathname.lastIndexOf(`/${path}`)),
+               href: `${pathname?.slice(0, pathname.lastIndexOf(`/${path}`))} /${path}`,
             });
 
             if (index > 0 && index < data.length - 1) {

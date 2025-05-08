@@ -20,6 +20,7 @@ export const Sidebar = () => {
          icon: {
             name: 'MingcuteHome2Fill',
          },
+         href: '/',
       },
       {
          code: 'settings',
@@ -27,6 +28,7 @@ export const Sidebar = () => {
          icon: {
             name: 'CiSettingsFilled',
          },
+         href: '/settings',
       },
    ];
 
@@ -39,9 +41,6 @@ export const Sidebar = () => {
                'bg-background fixed left-0 z-50 -translate-x-full',
                'md:relative md:w-80 md:p-4 md:translate-x-0',
             )}
-            // animate={{
-            //    translateX: show ? 0 : '-100%',
-            // }}
             transition={{
                bounce: 0,
             }}
