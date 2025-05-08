@@ -1,5 +1,6 @@
 import { icon } from '@assets/icon';
 import { assets } from '@configs/assets';
+import { useAppStore } from '@packages/hooks/stores';
 import clsx from 'clsx';
 import { Image, type ImageStyle } from 'react-native';
 
@@ -11,10 +12,12 @@ type Props = {
 };
 
 export const Media = ({ name, className, color }: Props) => {
+   const colorPallet = useAppStore((state) => state.colorPallet);
+
    return (
       <Image
          source={assets[name]}
-         tintColor={color}
+         tintColor={color || colorPallet['t-normal']}
          className={clsx(className, {
             'size-6': !!icon?.[name as keyof typeof icon],
          })}

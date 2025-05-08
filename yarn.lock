@@ -983,6 +983,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.3.tgz#b17a2171f9074df9e91bfb07ef99a892ac06412a"
   integrity sha512-ICgUR+kPimx0vvRzf+N/7L7tVSQeE3BYY+NhHRHXS1kBuPO7z2+7ea2HbhDyZdTephgvNvKrlDDKUexuCVBVvg==
 
+"@expo-google-fonts/plus-jakarta-sans@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/plus-jakarta-sans/-/plus-jakarta-sans-0.3.0.tgz#1127f8fc5b6dd0ad688b8b6b2dcf95bc6a2cbaaa"
+  integrity sha512-53xLf46hnQOwQjcuXl4IfPyIltmgjfKSdyYk0YcwssPRcDF38j89jW541h/DqTHWKU2u/bV00Lg88uf1NgN+Kg==
+
 "@expo/cli@0.24.11":
   version "0.24.11"
   resolved "https://registry.npmjs.org/@expo/cli/-/cli-0.24.11.tgz"

@@ -1,4 +1,25 @@
+import {
+   PlusJakartaSans_200ExtraLight,
+   PlusJakartaSans_300Light,
+   PlusJakartaSans_400Regular,
+   PlusJakartaSans_500Medium,
+   PlusJakartaSans_600SemiBold,
+   PlusJakartaSans_700Bold,
+   PlusJakartaSans_800ExtraBold,
+} from '@expo-google-fonts/plus-jakarta-sans';
 import { vars } from 'nativewind';
+
+export const font = {
+   plusJakarta: {
+      ExtraLight: PlusJakartaSans_200ExtraLight,
+      Light: PlusJakartaSans_300Light,
+      Regular: PlusJakartaSans_400Regular,
+      Medium: PlusJakartaSans_500Medium,
+      SemiBold: PlusJakartaSans_600SemiBold,
+      Bold: PlusJakartaSans_700Bold,
+      ExtraBold: PlusJakartaSans_800ExtraBold,
+   },
+};
 
 export const theme = {
    default: {

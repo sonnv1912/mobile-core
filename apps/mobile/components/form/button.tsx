@@ -1,7 +1,6 @@
+import clsx from 'clsx';
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import { Pressable, Text } from 'react-native';
-import clsx from 'clsx';
-import Animated, { useSharedValue, withTiming } from 'react-native-reanimated';
 
 type Props = {
    color?: 'primary';
@@ -22,8 +21,6 @@ export const Button = ({
    disable,
    onPress,
 }: PropsWithChildren<Props>) => {
-   const opacity = useSharedValue(1);
-
    const handleColor = useCallback(
       (button: string[] = [''], text: string[] = ['']) => {
          if (color === 'primary') {
@@ -76,29 +73,13 @@ export const Button = ({
          className={clsx(dynamicClassnames.button, className, {
             'opacity-80': disable,
          })}
-         onPressIn={() => {
-            opacity.value = withTiming(0.6, {
-               duration: 100,
-            });
-         }}
-         onPressOut={() => {
-            opacity.value = withTiming(1, {
-               duration: 100,
-            });
-         }}
          onPress={onPress}
       >
-         <Animated.View
-            style={{
-               opacity,
-            }}
-         >
-            {children ? (
-               children
-            ) : (
-               <Text className={dynamicClassnames.text}>{content}</Text>
-            )}
-         </Animated.View>
+         {children ? (
+            children
+         ) : (
+            <Text className={dynamicClassnames.text}>{content}</Text>
+         )}
       </Pressable>
    );
 };
