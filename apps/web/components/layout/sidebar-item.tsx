@@ -16,7 +16,7 @@ export const SidebarItem = ({ data }: Props) => {
             'md:pl-2',
          )}
       >
-         {data.icon && <Media name={data.icon} />}
+         {data.icon && <Media name={data.icon.name} />}
 
          <p
             className={clsx(

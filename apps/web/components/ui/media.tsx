@@ -8,7 +8,7 @@ export const Media = ({
    size = 24,
    className,
 }: MediaProps<SvgType>) => {
-   const Body = svg[name];
+   const Body = name ? svg[name] : svg.MaterialSymbolsHelp;
 
    return (
       <div

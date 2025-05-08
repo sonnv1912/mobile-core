@@ -17,12 +17,16 @@ export const Sidebar = () => {
       {
          code: 'home',
          label: 'Home',
-         icon: 'MingcuteHome2Fill',
+         icon: {
+            name: 'MingcuteHome2Fill',
+         },
       },
       {
          code: 'settings',
          label: 'Settings',
-         icon: 'CiSettingsFilled',
+         icon: {
+            name: 'CiSettingsFilled',
+         },
       },
    ];
 

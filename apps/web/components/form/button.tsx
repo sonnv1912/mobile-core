@@ -4,6 +4,7 @@ import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import type { DynamicProps } from '#types/button';
 import type { SvgType } from '@assets/svg/_index';
 import type { MediaProps } from '@packages/types';
+import Link from 'next/link';
 
 type Props = {
    scheme?: 'primary' | 'gray';
@@ -16,6 +17,7 @@ type Props = {
    content?: string;
    disable?: boolean;
    fullWidth?: boolean;
+   href?: string;
 
    onClick?: () => void;
 };
@@ -32,9 +34,12 @@ export const Button = ({
    rightIcon,
    disable,
    fullWidth,
+   href,
 
    onClick,
 }: PropsWithChildren<Props>) => {
+   const Body = href ? Link : 'div';
+
    const buttonHeight = useMemo(() => {
       if (size === 'sm') {
          return 32;
@@ -169,7 +174,8 @@ export const Button = ({
    ]);
 
    return (
-      <div
+      <Body
+         href={href || '#'}
          className={clsx(
             'flex items-center gap-1.5 font-semibold',
             'border border-transparent hover:grayscale-25',
@@ -208,6 +214,6 @@ export const Button = ({
                )}
             </>
          )}
-      </div>
+      </Body>
    );
 };

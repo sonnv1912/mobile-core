@@ -4,6 +4,7 @@ import { FluentStar24Filled } from './FluentStar24Filled';
 import { FluentStar24Regular } from './FluentStar24Regular';
 import { IcRoundChevronRight } from './IcRoundChevronRight';
 import { LucideHardDriveUpload } from './LucideHardDriveUpload';
+import { MaterialSymbolsHelp } from './MaterialSymbolsHelp';
 import { MaterialSymbolsLogoutRounded } from './MaterialSymbolsLogoutRounded';
 import { MaterialSymbolsMenuRounded } from './MaterialSymbolsMenuRounded';
 import { MingcuteHome2Fill } from './MingcuteHome2Fill';
@@ -17,8 +18,6 @@ export const svg = {
 
    SolarUserBold,
 
-   MaterialSymbolsLogoutRounded,
-
    CiSettingsFilled,
 
    FluentStar24Filled,
@@ -31,6 +30,8 @@ export const svg = {
    SiSearchLine,
 
    MaterialSymbolsMenuRounded,
+   MaterialSymbolsHelp,
+   MaterialSymbolsLogoutRounded,
 };
 
 export type SvgType = keyof typeof svg;

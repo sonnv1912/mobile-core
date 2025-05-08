@@ -1,6 +1,6 @@
 export type MediaProps<T = string> = {
    color?: string;
    size?: number;
-   name: T;
+   name?: T;
    className?: string;
 };
