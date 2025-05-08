@@ -5,9 +5,9 @@ import type { ExpoConfig, ConfigContext } from 'expo/config';
 
 const VERSION_NUMBER = '1.0.0';
 const APP_ID = 'com.anonymous.newapp';
-const IOS_APP_ICON = './assets/images/ios-app-icon.png';
-const ANDROID_APP_ICON = './assets/images/android-app-icon.png';
-const SPLASH_ICON = './assets/images/splash.png';
+const IOS_APP_ICON = './assets/image/ios-app-icon.png';
+const ANDROID_APP_ICON = './assets/image/android-app-icon.png';
+const SPLASH_ICON = './assets/image/splash.png';
 
 export default (_: ConfigContext): ExpoConfig => {
    return {

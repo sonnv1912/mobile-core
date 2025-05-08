@@ -1,0 +1,30 @@
+{
+   "name": "@packages/assets",
+   "version": "1.0.0",
+   "exports": {
+      "./package.json": "./package.json",
+      "./svg": {
+         "types": "./dist/svg/index.d.ts",
+         "import": "./src/svg/index.ts",
+         "require": "./dist/svg/index.js"
+      },
+      "./font": {
+         "types": "./dist/font/index.d.ts",
+         "import": "./src/font/index.ts",
+         "require": "./dist/font/index.js"
+      }
+   },
+   "scripts": {
+      "dev_package": "tsup --watch"
+   },
+   "dependencies": {
+      "tsup": "8.4.0"
+   },
+   "peerDependencies": {
+      "@tanstack/react-query": "*",
+      "i18next": "*",
+      "react-i18next": "*",
+      "react": "*",
+      "react-dom": "*"
+   }
+}

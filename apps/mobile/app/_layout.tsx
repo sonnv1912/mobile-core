@@ -1,4 +1,4 @@
-import '../assets/styles/main.css';
+import '../assets/style/main.css';
 import '../configs/i18n/index';
 import '../gesture-handler';
 
@@ -20,7 +20,9 @@ export default () => {
                      screenOptions={{
                         headerShown: false,
                      }}
-                  />
+                  >
+                     <Stack.Screen name='(tabs)' />
+                  </Stack>
 
                   <Toast />
                </KeyboardProvider>

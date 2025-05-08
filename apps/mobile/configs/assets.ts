@@ -1,7 +1,7 @@
-import { icons } from '@assets/icons';
-import { images } from '@assets/images';
+import { icon } from '@assets/icon';
+import { image } from '@assets/image';
 
 export const assets = {
-   ...icons,
-   ...images,
+   ...icon,
+   ...image,
 };

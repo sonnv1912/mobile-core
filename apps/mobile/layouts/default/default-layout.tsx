@@ -18,7 +18,7 @@ export const DefaultLayout = ({ children }: PropsWithChildren) => {
                },
             ]}
          >
-            <SystemBars style='auto' />
+            <SystemBars style={colorMode} />
 
             {children}
          </View>

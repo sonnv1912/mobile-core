@@ -1,10 +1,10 @@
 export const routes = {
    root: {
-      path: '/',
+      path: '(tabs)/index',
       params: undefined,
    },
    home: {
-      path: '/home',
+      path: '(tabs)/index',
       params: undefined,
    },
    login: {

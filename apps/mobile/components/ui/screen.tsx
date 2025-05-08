@@ -1,19 +1,23 @@
+import { useAppStore } from '@packages/hooks/stores';
 import clsx from 'clsx';
 import type { PropsWithChildren } from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type Props = {
+   showInsetBottom?: boolean;
    className?: string;
    statusBarClassName?: string;
 };
 
 export const Screen = ({
+   showInsetBottom = true,
    children,
    statusBarClassName,
    className,
 }: PropsWithChildren<Props>) => {
    const insets = useSafeAreaInsets();
+   const colorPallet = useAppStore((state) => state.colorPallet);
 
    return (
       <>
@@ -21,16 +25,21 @@ export const Screen = ({
             className={statusBarClassName}
             style={{
                height: insets.top,
+               backgroundColor: colorPallet.primary,
             }}
          />
 
-         <View className={clsx('flex-1 p-4', className)}>{children}</View>
+         <View className={clsx('flex-1 p-4 bg-white', className)}>
+            {children}
+         </View>
 
-         <View
-            style={{
-               height: insets.bottom,
-            }}
-         />
+         {showInsetBottom && (
+            <View
+               style={{
+                  height: insets.bottom,
+               }}
+            />
+         )}
       </>
    );
 };

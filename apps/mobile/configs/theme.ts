@@ -1,28 +1,23 @@
 import { vars } from 'nativewind';
 
-export const colorPallet = {
-   primary: {
-      '50': '#f5f5f6',
-      '100': '#e6e6e7',
-      '200': '#cfd0d2',
-      '300': '#aeafb2',
-      '400': '#85868b',
-      '500': '#6a6b70',
-      '600': '#5a5b60',
-      '700': '#4d4d51',
-      '800': '#434347',
-      '900': '#3b3b3e',
-      '950': '#262628',
-   },
-};
-
 export const theme = {
    default: {
       light: vars({
-         '--color-primary': colorPallet.primary[200],
+         '--color-background': '#ffffff',
+         '--color-primary': '#4f46e5',
+         '--color-danger': '#f43f5e',
+         '--color-gray': '#cbd5e1',
+
+         '--color-divider': '#e2e8f0',
+
+         '--color-box-primary': '#f8fafc',
+         '--color-box-secondary': '#f1f5f9',
+         '--color-box-tertiary': '#e2e8f0',
+
+         '--color-t-strong': '#1e293b',
+         '--color-t-normal': '#475569',
+         '--color-t-muted': '#94a3b8',
       }),
-      dark: vars({
-         '--color-primary': colorPallet.primary[950],
-      }),
+      dark: vars({}),
    },
 };

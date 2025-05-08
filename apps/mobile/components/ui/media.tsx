@@ -1,26 +1,22 @@
-import { icons } from '@assets/icons';
+import { icon } from '@assets/icon';
 import { assets } from '@configs/assets';
-import { colorPallet } from '@configs/theme';
 import clsx from 'clsx';
-import { Image } from 'react-native';
+import { Image, type ImageStyle } from 'react-native';
 
 type Props = {
    name: keyof typeof assets;
    className?: string;
    color?: string;
+   style?: ImageStyle;
 };
 
-export const Media = ({
-   name,
-   className,
-   color = colorPallet.primary[500],
-}: Props) => {
+export const Media = ({ name, className, color }: Props) => {
    return (
       <Image
          source={assets[name]}
          tintColor={color}
          className={clsx(className, {
-            'size-6': !!icons?.[name],
+            'size-6': !!icon?.[name as keyof typeof icon],
          })}
       />
    );
