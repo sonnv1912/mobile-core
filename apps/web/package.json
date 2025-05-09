@@ -11,7 +11,7 @@
       "@packages/utils": "*",
       "@tanstack/react-query": "^5.75.5",
       "clsx": "^2.1.1",
-      "i18next": "^25.0.2",
+      "i18next": "^25.1.1",
       "motion": "^12.10.2",
       "next": "15.3.2",
       "query-string": "9.1.2",
