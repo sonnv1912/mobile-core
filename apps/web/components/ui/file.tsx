@@ -75,7 +75,7 @@ export const File = ({ data }: Props) => {
          className='border border-divider rounded-3xl overflow-hidden'
          onClick={() => {}}
       >
-         <div className='h-36 flex items-center bg-box-primary justify-center'>
+         <div className='h-36 flex items-center bg-box-primary justify-center text-3xl'>
             {icon}
          </div>
 
