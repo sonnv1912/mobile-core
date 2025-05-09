@@ -6,7 +6,7 @@ import { Typography } from './typography';
 export const ProfilePreview = () => {
    return (
       <Button className='flex-row items-center gap-2'>
-         <Media name='IconamoonProfileCircleFill' className='size-12' />
+         <Media name='IconamoonProfileCircleFill' className='size-10' />
 
          <View className='flex-1 gap-1'>
             <Typography>Welcome</Typography>

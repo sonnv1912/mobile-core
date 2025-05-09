@@ -1,4 +1,3 @@
-import { icon } from '@assets/icon';
 import { assets } from '@configs/assets';
 import { useAppStore } from '@packages/hooks/stores';
 import clsx from 'clsx';
@@ -18,9 +17,7 @@ export const Media = ({ name, className, color }: Props) => {
       <Image
          source={assets[name]}
          tintColor={color || colorPallet['t-normal']}
-         className={clsx(className, {
-            'size-6': !!icon?.[name as keyof typeof icon],
-         })}
+         className={clsx(className)}
       />
    );
 };
