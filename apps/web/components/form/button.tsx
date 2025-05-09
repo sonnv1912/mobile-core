@@ -2,7 +2,7 @@ import { Media } from '@components/ui/media';
 import clsx from 'clsx';
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import type { DynamicProps } from '#types/button';
-import type { SvgType } from '@assets/svg/_index';
+import type { SvgType } from '@assets/svg';
 import type { MediaProps } from '@packages/types';
 import Link from 'next/link';
 

@@ -8,11 +8,13 @@
       "Mingcute",
       "nativewind",
       "nodenext",
+      "Pictogrammers",
       "Pressable",
       "Rana",
       "Sargam",
       "Schwarze",
       "Sortify",
+      "togrammers",
       "turbopack"
    ],
    "tailwindCSS.classAttributes": ["class", "className", "headerClassName"],

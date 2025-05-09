@@ -1,1 +1,3 @@
-export const endpoint = {};
+export const endpoint = {
+   files: '/files',
+};

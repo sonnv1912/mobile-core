@@ -1,1 +1,5 @@
-export const queryKey = {};
+export const queryKey = {
+   files: {
+      list: () => ['list', 'queries'],
+   },
+};
