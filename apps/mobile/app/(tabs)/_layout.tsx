@@ -15,6 +15,7 @@ export default () => {
                tabBarInactiveTintColor: colorPallet['t-muted'],
                tabBarIcon: ({ focused }) => (
                   <Media
+                     className='size-7'
                      name='MingcuteHome2Fill'
                      color={
                         focused ? colorPallet.primary : colorPallet['t-muted']
@@ -32,6 +33,7 @@ export default () => {
                tabBarInactiveTintColor: colorPallet['t-muted'],
                tabBarIcon: ({ focused }) => (
                   <Media
+                     className='size-7'
                      name='SolarUserBold'
                      color={
                         focused ? colorPallet.primary : colorPallet['t-muted']
@@ -49,6 +51,7 @@ export default () => {
                tabBarInactiveTintColor: colorPallet['t-muted'],
                tabBarIcon: ({ focused }) => (
                   <Media
+                     className='size-7'
                      name='CiSettingsFilled'
                      color={
                         focused ? colorPallet.primary : colorPallet['t-muted']

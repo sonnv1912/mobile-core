@@ -1,0 +1,30 @@
+export type FileType = {
+   id: string;
+   storage: string;
+   filename_disk: string;
+   filename_download: string;
+   title: string;
+   type: string;
+   folder: string;
+   uploaded_by: string;
+   created_on: string;
+   modified_by: string;
+   modified_on: string;
+   charset: string;
+   filesize: number;
+   width: number;
+   height: number;
+   duration: string;
+   embed: string;
+   description: string;
+   location: string;
+   tags: string;
+   metadata: Metadata;
+   focal_point_x: string;
+   focal_point_y: string;
+   tus_id: string;
+   tus_data: string;
+   uploaded_on: string;
+};
+
+export type Metadata = string;

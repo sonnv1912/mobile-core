@@ -1,4 +1,4 @@
-import { type SvgType, svg } from '@assets/svg/_index';
+import { type SvgType, svg } from '@assets/svg';
 import type { MediaProps } from '@packages/types';
 import clsx from 'clsx';
 

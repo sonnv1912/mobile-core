@@ -7,3 +7,7 @@ export type RequestProps = {
       token?: string;
    };
 };
+
+export type Response<T> = {
+   data: T;
+};

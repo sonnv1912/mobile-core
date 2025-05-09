@@ -1,6 +1,6 @@
 'use client';
 
-import type { SvgType } from '@assets/svg/_index';
+import type { SvgType } from '@assets/svg';
 import { Button } from '@components/form/button';
 import type { MediaProps, Option } from '@packages/types';
 import { usePathname } from 'next/navigation';

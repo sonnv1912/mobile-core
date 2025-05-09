@@ -19,3 +19,4 @@ services:
       WEBSOCKETS_ENABLED: "true"
 
       CORS_ENABLED: "true"
+      CORS_ORIGIN: "*"

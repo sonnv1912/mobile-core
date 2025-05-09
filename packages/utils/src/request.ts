@@ -1,5 +1,6 @@
 import queryString from 'query-string';
 import type { RequestProps } from '@packages/types';
+import { env } from '@packages/configs';
 
 export const request = async <T>({ endpoint, options }: RequestProps) => {
    const params = options.params
@@ -8,7 +9,7 @@ export const request = async <T>({ endpoint, options }: RequestProps) => {
 
    const body = options?.body ? JSON.stringify(options.body) : undefined;
 
-   const response = await fetch(endpoint + params, {
+   const response = await fetch(env.BASE_URL + endpoint + params, {
       method: 'GET',
       body,
       headers: {

@@ -7,6 +7,16 @@
          "types": "./dist/stores/index.d.ts",
          "import": "./src/stores/index.ts",
          "require": "./dist/stores/index.js"
+      },
+      "./common": {
+         "types": "./dist/common/index.d.ts",
+         "import": "./src/common/index.ts",
+         "require": "./dist/common/index.js"
+      },
+      "./query": {
+         "types": "./dist/query/index.d.ts",
+         "import": "./src/query/index.ts",
+         "require": "./dist/query/index.js"
       }
    },
    "scripts": {
@@ -18,6 +28,7 @@
    },
    "peerDependencies": {
       "zustand": "*",
-      "@react-native-async-storage/async-storage": "*"
+      "@react-native-async-storage/async-storage": "*",
+      "@tanstack/react-query": "*"
    }
 }

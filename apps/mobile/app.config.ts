@@ -30,6 +30,7 @@ export default (_: ConfigContext): ExpoConfig => {
       plugins: [
          'expo-router',
          'react-native-edge-to-edge',
+         'expo-font',
          [
             'expo-splash-screen',
             {
