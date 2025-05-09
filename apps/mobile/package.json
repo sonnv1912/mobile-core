@@ -33,7 +33,7 @@
       "i18next": "^25.1.1",
       "nativewind": "^4.1.23",
       "query-string": "9.1.2",
-      "react": "19.0.0",
+      "react": "19.1.0",
       "react-i18next": "^15.5.1",
       "react-native": "0.79.2",
       "react-native-edge-to-edge": "^1.6.0",
