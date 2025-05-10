@@ -1,5 +1,6 @@
 export const queryKey = {
    files: {
-      list: () => ['list', 'queries'],
+      list: () => ['list', 'files'],
+      detail: () => ['detail', 'file'],
    },
 };

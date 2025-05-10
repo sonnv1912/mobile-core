@@ -38,7 +38,7 @@ export const Sidebar = () => {
             ref={ref}
             className={clsx(
                'flex flex-col p-1 border-r border-divider h-screen',
-               'bg-background fixed left-0 z-50 -translate-x-full',
+               'bg-background fixed left-0 z-10 -translate-x-full',
                'md:relative md:w-80 md:p-4 md:translate-x-0',
             )}
             transition={{

@@ -2,7 +2,7 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import clsx from 'clsx';
 import { ReactQuery } from '@components/provider/react-query';
 
@@ -16,11 +16,19 @@ export const metadata: Metadata = {
    description: 'Sortify: Your file manager',
 };
 
-export default ({ children }: PropsWithChildren) => {
+type Props = {
+   modal?: ReactNode;
+};
+
+export default ({ children, modal }: PropsWithChildren<Props>) => {
    return (
       <html lang='en' className={clsx(font.variable, 'light')}>
          <body>
-            <ReactQuery>{children}</ReactQuery>
+            <ReactQuery>
+               {children}
+
+               {modal}
+            </ReactQuery>
          </body>
       </html>
    );

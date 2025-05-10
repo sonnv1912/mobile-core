@@ -4,9 +4,12 @@ import { FluentStar24Filled } from './FluentStar24Filled';
 import { FluentStar24Regular } from './FluentStar24Regular';
 import { IcRoundChevronRight } from './IcRoundChevronRight';
 import { LucideHardDriveUpload } from './LucideHardDriveUpload';
+import { MaterialSymbolsCalendarToday } from './MaterialSymbolsCalendarToday';
+import { MaterialSymbolsEditCalendar } from './MaterialSymbolsEditCalendar';
 import { MaterialSymbolsHelp } from './MaterialSymbolsHelp';
 import { MaterialSymbolsLogoutRounded } from './MaterialSymbolsLogoutRounded';
 import { MaterialSymbolsMenuRounded } from './MaterialSymbolsMenuRounded';
+import { MaterialSymbolsSdCard } from './MaterialSymbolsSdCard';
 import { MdiFile } from './MdiFile';
 import { MdiFileImageBox } from './MdiFileImageBox';
 import { MingcuteHome2Fill } from './MingcuteHome2Fill';
@@ -34,6 +37,9 @@ export const svg = {
    MaterialSymbolsMenuRounded,
    MaterialSymbolsHelp,
    MaterialSymbolsLogoutRounded,
+   MaterialSymbolsCalendarToday,
+   MaterialSymbolsEditCalendar,
+   MaterialSymbolsSdCard,
 
    MdiFile,
    MdiFileImageBox,

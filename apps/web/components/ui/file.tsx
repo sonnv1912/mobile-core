@@ -1,82 +1,22 @@
+import { route } from '@configs/route';
 import type { FileType } from '@packages/types/data';
+import { fileIcon } from '@packages/utils';
 import clsx from 'clsx';
-import { useMemo } from 'react';
+import Link from 'next/link';
 
 type Props = {
-   data: FileType;
+   data?: FileType;
 };
 
 export const File = ({ data }: Props) => {
-   const icon = useMemo(() => {
-      if (!data.type) {
-         return '📄';
-      }
-
-      const type = data.type.toLowerCase();
-
-      if (type.includes('image')) {
-         return '🖼️';
-      }
-
-      if (type.includes('video')) {
-         return '🎞️';
-      }
-
-      if (type.includes('audio')) {
-         return '🎧';
-      }
-
-      if (type.includes('pdf')) {
-         return '📕';
-      }
-
-      if (type.includes('zip') || type.includes('rar')) {
-         return '🗜️';
-      }
-
-      if (type.includes('excel') || type.includes('spreadsheet')) {
-         return '📊';
-      }
-
-      if (type.includes('word')) {
-         return '📄';
-      }
-
-      if (type.includes('powerpoint') || type.includes('presentation')) {
-         return '📽️';
-      }
-      if (type.includes('text') || type.includes('plain')) {
-         return '📃';
-      }
-      if (type.includes('json') || type.includes('xml')) {
-         return '🧾';
-      }
-      if (
-         type.includes('code') ||
-         type.includes('javascript') ||
-         type.includes('typescript')
-      ) {
-         return '💻';
-      }
-
-      return '📁';
-   }, [data.type]);
-
-   // const isImage = useMemo(() => {
-   //    return data.type?.toLowerCase().includes('image');
-   // }, [data.type]);
-
-   // const isVideo = useMemo(() => {
-   //    return data.type?.toLowerCase().includes('video');
-   // }, [data.type]);
-
    return (
-      <div
+      <Link
+         href={`${route.fileDetail.path}/${data?.id}`}
          className='border border-divider rounded-3xl overflow-hidden'
-         onClick={() => {}}
+         scroll={false}
       >
          <div className='h-36 flex items-center bg-box-primary justify-center text-3xl'>
-            {icon}
+            {fileIcon(data)}
          </div>
 
          <p
@@ -85,8 +25,8 @@ export const File = ({ data }: Props) => {
                'overflow-ellipsis whitespace-nowrap overflow-hidden',
             )}
          >
-            {data.title}
+            {data?.title}
          </p>
-      </div>
+      </Link>
    );
 };

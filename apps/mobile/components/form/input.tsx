@@ -1,7 +1,7 @@
 import { colorPallet } from '@configs/theme';
 import { TextInput, View } from 'react-native';
 import { Media } from './media';
-import type { assets } from '@configs/assets';
+import type { assets } from '@configs/asset';
 
 type Props = {
    placeholder?: string;

@@ -1,10 +1,10 @@
-import { assets } from '@configs/assets';
+import { asset } from '@configs/asset';
 import { useAppStore } from '@packages/hooks/stores';
 import clsx from 'clsx';
 import { Image, type ImageStyle } from 'react-native';
 
 type Props = {
-   name: keyof typeof assets;
+   name: keyof typeof asset;
    className?: string;
    color?: string;
    style?: ImageStyle;
@@ -15,7 +15,7 @@ export const Media = ({ name, className, color }: Props) => {
 
    return (
       <Image
-         source={assets[name]}
+         source={asset[name]}
          tintColor={color || colorPallet['t-normal']}
          className={clsx(className)}
       />

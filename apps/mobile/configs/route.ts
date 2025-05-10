@@ -1,4 +1,4 @@
-export const routes = {
+export const route = {
    root: {
       path: '(tabs)/index',
       params: undefined,
@@ -14,5 +14,5 @@ export const routes = {
 };
 
 export type RouteStackParams = {
-   [key in keyof typeof routes]: (typeof routes)[key]['params'];
+   [key in keyof typeof route]: (typeof route)[key]['params'];
 };
